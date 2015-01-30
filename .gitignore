@@ -1,0 +1,14 @@
+*.pyc
+# ignore configuration files
+*.conf
+# ignore profiling
+*.lprof
+# ignore log files
+*.log
+*.log.swp
+# ignore dependencies
+bitcoinrpc/*
+# ignore pycache
+__pycache__/*
+# ignore pages
+*.html
