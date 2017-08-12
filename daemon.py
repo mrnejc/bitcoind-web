@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from bitcoinrpc.authproxy import AuthServiceProxy
-import time, os, math
+import time, os, math, decimal
 
 def log(logfile, loglevel, string):
     if loglevel > 1: # hardcoded loglevel here
@@ -185,7 +185,7 @@ def loop(cfg):
                     elif block['height'] < 420000:
                         block_subsidy = 25
                     elif block['height'] < 630000:
-                        block_subsidy = 12.5
+                        block_subsidy = decimal.Decimal(12.5)
 
                     if block_subsidy: # this will fail after block 630,000. TODO: stop being lazy and do it properly
                         total_fees = coinbase_amount - block_subsidy # assumption, mostly correct
